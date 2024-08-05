@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= form_tag(video_classification_classify_path, multipart: true) do %>
+        <div class="mb-3">
+          <label for="file" class="form-label">Select Video File:</label>
+          <%= file_field_tag :file, class: "form-control", required: true %>
+        </div>
+        <%= submit_tag "Upload and Classify", class: "btn btn-primary w-100" %>
+      <% end %>
+      <% if @result.present? %>
+        <div class="mt-4">
+          <h2 class="text-center">Classification Result:</h2>
+          <p class="text-center"><%= @result %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

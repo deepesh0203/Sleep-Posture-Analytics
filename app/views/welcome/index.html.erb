@@ -1,0 +1,34 @@
+<p>Please select a module:</p>
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <%= image_tag("image1.png", class: "card-img-top", alt: "Image Classification", height:"300") %>
+      <div class="card-body">
+        <h5 class="card-title">Posture Classification Using Images</h5>
+        <p class="card-text">Performs posture classification on images using 2D CNN architecture.</p>
+        <%= link_to "Go To Model", image_classification_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <%= image_tag("image2.png", class: "card-img-top", alt: "Breathing Rate Calculation", height:"300") %>
+      <div class="card-body">
+        <h5 class="card-title">Breathing Rate Calculation</h5>
+        <p class="card-text">Calculate average breathing rate using time series analysis from video data.</p>
+        <%= link_to "Go To Model", breathing_rate_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <%= image_tag("image3.png", class: "card-img-top", alt: "Video Classification", height: "300") %>
+      <div class="card-body">
+        <h5 class="card-title">Posture Classification Using Video</h5>
+        <p class="card-text">Performs frame by frame video analytics to classify postures using LSTM + CNN architecture.</p>
+        <%= link_to "Go To Model", video_classification_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,2 @@
+module VideoClassificationHelper
+end

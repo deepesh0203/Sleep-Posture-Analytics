@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Breathing Rate Plot Generator</h1>
+
+      <%= form_with url: generate_plot_breathing_rate_index_path, local: true, multipart: true do |form| %>
+        <div class="mb-3">
+          <%= form.label :file, "Upload Data File", class: "form-label" %>
+          <%= form.file_field :file, class: "form-control" %>
+        </div>
+        <div class="text-center">
+          <%= form.submit "Generate Plot", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <% if flash[:success] %>
+        <p class="text-center mt-3" style="color: green;"><%= flash[:success] %></p>
+      <% elsif flash[:error] %>
+        <p class="text-center mt-3" style="color: red;"><%= flash[:error] %></p>
+      <% end %>
+
+      <% if File.exist?(Rails.root.join('tmp', 'plot.png')) %>
+        <div class="text-center mt-4">
+          <h2>Generated Plot:</h2>
+          <%= image_tag plot_image_breathing_rate_index_path, alt: "Breathing Rate Plot", class: "img-fluid" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
